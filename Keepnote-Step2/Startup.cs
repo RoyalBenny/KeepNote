@@ -18,6 +18,7 @@ namespace Keepnote
     {
         public Startup(IConfiguration configuration)
         {
+          
             Configuration = configuration;
         }
 
@@ -26,6 +27,11 @@ namespace Keepnote
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<INoteRepository, NoteRepository>();
+            services.AddDbContext<KeepNoteContext>(options=> {
+                options.UseSqlServer("Integrated Security=true;Initial Catalog=ust;server=localhost");
+            });
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.

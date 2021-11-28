@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Keepnote.Models.Note>
 
+
 @{
     ViewData["Title"] = "Index";
 }
+
 
 <h1>Index</h1>
 
@@ -31,28 +33,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteContent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.NoteId })
-                @Html.ActionLink("Modify", "Edit", new { id = item.NoteId })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteContent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.NoteId })
+                    @Html.ActionLink("Modify", "Edit", new { id = item.NoteId })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

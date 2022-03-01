@@ -29,7 +29,7 @@ namespace Keepnote
         {
             services.AddScoped<INoteRepository, NoteRepository>();
             services.AddDbContext<KeepNoteContext>(options=> {
-                options.UseSqlServer("Integrated Security=true;Initial Catalog=ust;server=localhost");
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultString"));
             });
 
             services.Configure<CookiePolicyOptions>(options =>

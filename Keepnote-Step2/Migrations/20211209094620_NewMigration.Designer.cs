@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Keepnote_Step1_boilerplate.Migrations
 {
     [DbContext(typeof(KeepNoteContext))]
-    [Migration("20211125095604_NewMigration")]
+    [Migration("20211209094620_NewMigration")]
     partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
